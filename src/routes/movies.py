@@ -12,7 +12,6 @@ from schemas.movies import (
 router = APIRouter(prefix="/movies")
 
 
-
 @router.get("/", response_model=MovieListResponseSchema)
 async def get_movies(
     request: Request,
@@ -66,6 +65,7 @@ async def get_movies(
         total_pages=total_pages,
         total_items=total_items,
     )
+
 
 @router.get(
     "/{movie_id}/",
